@@ -15,62 +15,53 @@ class _InputPageState extends State<InputPage> {
           (child: Text('BMI CALCULATOR')),
       ),
       body:
-      Column(
+       const Column(
         children: <Widget>[Row(
             children: <Widget>[
               Expanded(
-                child: Container(
-                  margin: const EdgeInsets.all(15.0),
-                  height: 200,
-                  width: 170,
-                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(15.0),
-                      color: const Color(0xFF1D1E33)),
-                ),
+                child: Resuablecard(),
               ),
               Expanded(
-                child: Container(
-                  margin: const EdgeInsets.all(15.0),
-                  height: 200,
-                  width: 170,
-                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(15.0),
-                      color: const Color(0xFF1D1E33)),
-                ),
+                child: Resuablecard(),
               ),
             ]
         ),
           Expanded(
-            child: Container(
-              margin: const EdgeInsets.all(15.0),
-              height: 50,
-              width: 500,
-              decoration: BoxDecoration(borderRadius: BorderRadius.circular(15.0),
-                  color: const Color(0xFF1D1E33)),
-            ),
+            child: Resuablecard(),
           ),
           Row(
               children: <Widget>[
                 Expanded(
-                  child: Container(
-                    margin: const EdgeInsets.all(15.0),
-                    height: 200,
-                    width: 170,
-                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(15.0),
-                        color: const Color(0xFF1D1E33)),
-                  ),
+                  child: Resuablecard(),
                 ),
                 Expanded(
-                  child: Container(
-                    margin: const EdgeInsets.all(15.0),
-                    height: 200,
-                    width: 170,
-                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(15.0),
-                        color: const Color(0xFF1D1E33)),
-                  ),
+                  child: Resuablecard(),
                 ),
               ]
           ), ],
       ),
 
       );
+  }
+}
+
+// With help of flutter outline we have avoiding writing code again n again.
+// Followin is a widget which returns the widget we want to use several times in our app
+//
+
+class Resuablecard extends StatelessWidget {
+  const Resuablecard({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.all(15.0),
+      height: 200,
+      width: 170,
+      decoration: BoxDecoration(borderRadius: BorderRadius.circular(15.0),
+          color: const Color(0xFF1D1E33)),
+    );
   }
 }

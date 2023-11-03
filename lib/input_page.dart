@@ -52,7 +52,7 @@ class _InputPageState extends State<InputPage> {
   }
 }
 
-// With help of flutter outline we have avoiding writing code again n again.
+// With help of flutter outline we have avoided writing code again n again.
 // Followin is a widget which returns the widget we want to use several times in our app
 //
 

@@ -45,7 +45,13 @@ class _InputPageState extends State<InputPage> {
                   child: Resuablecard(colour: const Color(0xFF1D1E33)),
                 ),
               ]
-          ), ],
+          ),
+        Container(
+         color: const Color(0xFFEB1555),
+         margin: const EdgeInsets.only(top: 15.0),
+          width: double.infinity,
+          height: 80.0,
+        ),],
       ),
 
       );
@@ -57,8 +63,8 @@ class _InputPageState extends State<InputPage> {
 //
 
 class Resuablecard extends StatelessWidget {
-  Resuablecard({required this.colour});
-  Color colour;
+    Resuablecard({required this.colour});
+  final Color colour;
 
   @override
   Widget build(BuildContext context) {

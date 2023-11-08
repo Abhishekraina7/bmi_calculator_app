@@ -7,6 +7,7 @@ import 'Reusable_card.dart';
 const Color activeCardcolour = Color(0xFF1D1E33);
 const Color inactiveCardcolour = Color(0xFF111328);
 const Color bottomBarcolor = Color(0xFFEB1555);
+enum Genders{male,female} // emums for male and female selection representation
 
 class InputPage extends StatefulWidget {
   @override
@@ -14,26 +15,28 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
-  Color malecardcolor = inactiveCardcolour;
-  Color femalecardcolor = inactiveCardcolour;
+  Color maleCardColor = inactiveCardcolour;
+  Color femaleCardColor = inactiveCardcolour;
   // male == 1 && female ==2
-  void gesture(int gender) {
-    if (gender == 1) {
-      if (malecardcolor == inactiveCardcolour) {
-        malecardcolor = activeCardcolour;
-        femalecardcolor = inactiveCardcolour;
+  void gesture(Genders selectedGender) {
+    //malecard got pressed
+    if (selectedGender == Genders.male) {
+      if (maleCardColor == inactiveCardcolour) {
+        maleCardColor = activeCardcolour;
+        femaleCardColor = inactiveCardcolour;
       }
       else {
-        malecardcolor = inactiveCardcolour;
+        maleCardColor = inactiveCardcolour;
       }
     }
-      if (gender == 2) {
-        if (femalecardcolor == inactiveCardcolour) {
-          femalecardcolor = activeCardcolour;
-          malecardcolor = inactiveCardcolour;
+    //femalecard got pressed
+      if (selectedGender == Genders.female) {
+        if (femaleCardColor == inactiveCardcolour) {
+          femaleCardColor = activeCardcolour;
+          maleCardColor = inactiveCardcolour;
         }
         else {
-          femalecardcolor = inactiveCardcolour;
+          femaleCardColor = inactiveCardcolour;
         }
       }
     }
@@ -53,14 +56,14 @@ class _InputPageState extends State<InputPage> {
            Row(
             children: <Widget>[
               Expanded(
-                child: GestureDetector(
+                child: GestureDetector( //Gesture decector on the malecard
                   onTap: (){
                    setState(() {
-                     gesture(1);
+                     gesture(Genders.male);
 
                    });
                   },
-                  child: Resuablecard(colour: malecardcolor,
+                  child: Resuablecard(colour: maleCardColor,
                   cardChild: UpperUi(cardicon: FontAwesomeIcons.mars,
                   cardtext: "Male",),
                   ),
@@ -68,13 +71,13 @@ class _InputPageState extends State<InputPage> {
 
               ),
               Expanded(
-                child: GestureDetector(
+                child: GestureDetector(//Gesture detector on the Female card
                   onTap: (){
                     setState(() {
-                      gesture(2);
+                      gesture(Genders.female);
                     });
                   },
-                  child: Resuablecard( colour: femalecardcolor,
+                  child: Resuablecard( colour: femaleCardColor,
                   cardChild: UpperUi(cardicon: FontAwesomeIcons.venus,
                     cardtext: "Female",
                   ),),

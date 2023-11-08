@@ -1,3 +1,4 @@
+//This file contains the Icons and text that will act as the main UI to the user to navigate through the app
 import 'package:flutter/material.dart';
 
 class UpperUi extends StatelessWidget {

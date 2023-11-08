@@ -15,7 +15,7 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
-  Genders? selectedGender;
+  Genders ? selectedGender;   //It is a null aware operator, it helps the expression to be evaluated as null without causing any error
 
   // Color maleCardColor = inactiveCardcolour;
   // Color femaleCardColor = inactiveCardcolour;

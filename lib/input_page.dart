@@ -1,9 +1,11 @@
+//This file decides the layout of our application
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'icon_content.dart';
 import 'Reusable_card.dart';
 
 const Color activeCardcolour = Color(0xFF1D1E33);
+const Color inactiveCardcolour = Color(0xFF111328);
 const Color bottomBarcolor = Color(0xFFEB1555);
 
 class InputPage extends StatefulWidget {
@@ -12,6 +14,30 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
+  Color malecardcolor = inactiveCardcolour;
+  Color femalecardcolor = inactiveCardcolour;
+  // male == 1 && female ==2
+  void gesture(int gender) {
+    if (gender == 1) {
+      if (malecardcolor == inactiveCardcolour) {
+        malecardcolor = activeCardcolour;
+        femalecardcolor = inactiveCardcolour;
+      }
+      else {
+        malecardcolor = inactiveCardcolour;
+      }
+      if (gender == 2) {
+        if (femalecardcolor == inactiveCardcolour) {
+          femalecardcolor = activeCardcolour;
+          malecardcolor = inactiveCardcolour;
+        }
+        else {
+          femalecardcolor = inactiveCardcolour;
+        }
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,17 +51,32 @@ class _InputPageState extends State<InputPage> {
            Row(
             children: <Widget>[
               Expanded(
-                child: Resuablecard(colour: activeCardcolour,
-                cardChild: UpperUi(cardicon: FontAwesomeIcons.mars,
-                cardtext: "Male",),
+                child: GestureDetector(
+                  onTap: (){
+                   setState(() {
+                     gesture(1);
+
+                   });
+                  },
+                  child: Resuablecard(colour: malecardcolor,
+                  cardChild: UpperUi(cardicon: FontAwesomeIcons.mars,
+                  cardtext: "Male",),
+                  ),
                 ),
 
               ),
               Expanded(
-                child: Resuablecard( colour: activeCardcolour,
-                cardChild: UpperUi(cardicon: FontAwesomeIcons.venus,
-                  cardtext: "Female",
-                ),),
+                child: GestureDetector(
+                  onTap: (){
+                    setState(() {
+                      gesture(2);
+                    });
+                  },
+                  child: Resuablecard( colour: femalecardcolor,
+                  cardChild: UpperUi(cardicon: FontAwesomeIcons.venus,
+                    cardtext: "Female",
+                  ),),
+                ),
               ),
             ]
         ),

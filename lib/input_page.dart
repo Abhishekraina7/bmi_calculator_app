@@ -26,6 +26,7 @@ class _InputPageState extends State<InputPage> {
       else {
         malecardcolor = inactiveCardcolour;
       }
+    }
       if (gender == 2) {
         if (femalecardcolor == inactiveCardcolour) {
           femalecardcolor = activeCardcolour;
@@ -36,7 +37,8 @@ class _InputPageState extends State<InputPage> {
         }
       }
     }
-  }
+
+
 
   @override
   Widget build(BuildContext context) {

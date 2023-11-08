@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'input_page.dart';
-
+//This file for deciding the theme of our application
 void main() => runApp(BMICalculator());
 
 class BMICalculator extends StatelessWidget {

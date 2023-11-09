@@ -3,10 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'icon_content.dart';
 import 'Reusable_card.dart';
+import 'constants.dart';
 
-const Color activeCardcolour = Color(0xFF1D1E33);
-const Color inactiveCardcolour = Color(0xFF111328);
-const Color bottomBarcolor = Color(0xFFEB1555);
+
 enum Genders{male,female} // emums for male and female selection representation
 
 class InputPage extends StatefulWidget {
@@ -45,7 +44,6 @@ class _InputPageState extends State<InputPage> {
   //   }
 
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -67,7 +65,7 @@ class _InputPageState extends State<InputPage> {
                    });
                   },
                   child: Resuablecard(
-                    colour: selectedGender==Genders.male ? activeCardcolour : inactiveCardcolour,
+                    colour: selectedGender==Genders.male ? kactiveCardcolour : kinactiveCardcolour,
                     cardChild: UpperUi(cardicon: FontAwesomeIcons.mars,
                       cardtext: "Male",),
                   ),
@@ -81,8 +79,9 @@ class _InputPageState extends State<InputPage> {
                       (selectedGender = Genders.female);
                     });
                   },
-                  child: Resuablecard( colour: selectedGender == Genders.female ? activeCardcolour : inactiveCardcolour,
-                  cardChild: UpperUi(cardicon: FontAwesomeIcons.venus,
+                  child: Resuablecard(
+                    colour: selectedGender == Genders.female ? kactiveCardcolour : kinactiveCardcolour,
+                    cardChild: UpperUi(cardicon: FontAwesomeIcons.venus,
                     cardtext: "Female",
                   ),),
                 ),
@@ -96,23 +95,40 @@ class _InputPageState extends State<InputPage> {
               width: 500,
               decoration: BoxDecoration(borderRadius: BorderRadius.circular(15.0),
                   color:  const Color(0xFF1D1E33)),
+              child: const Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Text("Height",style: TextStyle(color: Colors.white, fontSize: 20.0),),
+                  SizedBox(
+                    height: 10.0,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Text("160",
+                        style:TextStyle(fontSize: 50.0,fontWeight: FontWeight.bold) ,)
+                    ],
+                  ),
+                ],
+
+              ),
             ),
           ),
            Row(
               children: <Widget>[
                 Expanded(
-                  child: Resuablecard(colour: activeCardcolour),
+                  child: Resuablecard(colour: kactiveCardcolour),
                 ),
                 Expanded(
-                  child: Resuablecard(colour: activeCardcolour),
+                  child: Resuablecard(colour: kactiveCardcolour),
                 ),
               ]
           ),
         Container(
-         color: bottomBarcolor,
+         color: kbottomBarcolor,
          margin: const EdgeInsets.only(top: 15.0),
           width: double.infinity,
-          height: 80.0,
+          height: kbottomBarheight,
         ),],
       ),
 

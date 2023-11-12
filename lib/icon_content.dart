@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 class UpperUi extends StatelessWidget {
-  UpperUi({this.cardicon,this.cardtext});
+  const UpperUi({super.key, this.cardicon,this.cardtext});
   final IconData? cardicon;
   final String? cardtext;
 

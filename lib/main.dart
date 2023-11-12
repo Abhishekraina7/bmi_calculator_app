@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'input_page.dart';
 //This file for deciding the theme of our application
-void main() => runApp(BMICalculator());
+void main() => runApp(const BMICalculator());
 
 class BMICalculator extends StatelessWidget {
+  const BMICalculator({super.key});
+
 
   // static const primaryColor = Color(0xFF0A0D22);
   @override
@@ -19,7 +21,7 @@ class BMICalculator extends StatelessWidget {
         textTheme:const TextTheme(bodyMedium: TextStyle(color: Colors.white)), // for white use (0xFFFFFFFF)
 
       ),
-      home: InputPage(),
+      home: const InputPage(),
     );
   }
 }

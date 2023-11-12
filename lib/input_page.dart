@@ -10,11 +10,13 @@ import 'constants.dart';
 enum Genders{male,female} // emums for male and female selection representation
 
 class InputPage extends StatefulWidget {
+  const InputPage({super.key});
+
   @override
-  _InputPageState createState() => _InputPageState();
+  InputPageState createState() => InputPageState();
 }
 
-class _InputPageState extends State<InputPage> {
+class InputPageState extends State<InputPage> {
   Genders ? selectedGender;//It is a null aware operator, it helps the expression to be evaluated as null without causing any error
   int height = 180;
 
@@ -68,7 +70,7 @@ class _InputPageState extends State<InputPage> {
                   },
                   child: Resuablecard(
                     colour: selectedGender==Genders.male ? kactiveCardcolour : kinactiveCardcolour,
-                    cardChild: UpperUi(cardicon: FontAwesomeIcons.mars,
+                    cardChild: const UpperUi(cardicon: FontAwesomeIcons.mars,
                       cardtext: "Male",),
                   ),
                 ),
@@ -83,7 +85,7 @@ class _InputPageState extends State<InputPage> {
                   },
                   child: Resuablecard(
                     colour: selectedGender == Genders.female ? kactiveCardcolour : kinactiveCardcolour,
-                    cardChild: UpperUi(cardicon: FontAwesomeIcons.venus,
+                    cardChild: const UpperUi(cardicon: FontAwesomeIcons.venus,
                     cardtext: "Female",
                   ),),
                 ),
@@ -118,7 +120,7 @@ class _InputPageState extends State<InputPage> {
                   ),
                   SliderTheme(
                     data: const SliderThemeData(
-                        inactiveTrackColor: const Color(0xFF8D8E98),
+                        inactiveTrackColor:  Color(0xFF8D8E98),
                         thumbColor: Color(0xFFEB1555),
                         overlayColor: Color(0x1fEB1555),
                         activeTrackColor: Color(0xFFFFFFFF)

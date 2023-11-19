@@ -19,6 +19,9 @@ class InputPage extends StatefulWidget {
 class InputPageState extends State<InputPage> {
   Genders ? selectedGender;//It is a null aware operator, it helps the expression to be evaluated as null without causing any error
   int height = 180;
+  int weight = 65;
+
+   
 
   // Color maleCardColor = inactiveCardcolour;
   // Color femaleCardColor = inactiveCardcolour;
@@ -102,7 +105,7 @@ class InputPageState extends State<InputPage> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  const Text("Height",style: TextStyle(color: Colors.white, fontSize: 20.0),),
+                  const Text("HEIGHT",style: TextStyle(color: Colors.white, fontSize: 20.0),),
                   const SizedBox(
                     height: 10.0,
                   ),
@@ -133,9 +136,8 @@ class InputPageState extends State<InputPage> {
                       onChanged: (double newvalue){
                         setState(() {
                           height = newvalue.round();
-                        });
-
-
+                        }
+                        );
                       },
 
                     ),
@@ -145,12 +147,41 @@ class InputPageState extends State<InputPage> {
               ),
             ),
           ),
-           Row(
+            Row(
               children: <Widget>[
                 Expanded(
-                  child: Resuablecard(colour: kactiveCardcolour),
+                  child: Resuablecard(colour: kactiveCardcolour,
+                    cardChild: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        const Text('WEIGHT',style: TextStyle(fontWeight: FontWeight.bold, color: Colors.grey,fontSize: 18.0)
+                          ),
+                        const SizedBox(
+                          height: 10.0,
+                        ),
+                        Text(weight.toString(),
+                            style: knumberstyle),
+                        const Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                          RoundIconButton(icondata: FontAwesomeIcons.plus,iconcolor: Colors.white, ),
+                             SizedBox(
+                              width: 10.0,
+                            ),
+                             FloatingActionButton(
+                              backgroundColor: Color(0xFF4C4F5E),
+                                onPressed: null,
+                               child: Icon(Icons.add),
+                             ),
+                          ],
+                        ),
+                      ],
+
+                    ),
+                  ),
+
                 ),
-                Expanded(
+                const Expanded(
                   child: Resuablecard(colour: kactiveCardcolour),
                 ),
               ]
@@ -160,12 +191,38 @@ class InputPageState extends State<InputPage> {
          margin: const EdgeInsets.only(top: 15.0),
           width: double.infinity,
           height: kbottomBarheight,
-        ),],
-      ),
-
+        ),
+        ],
+        ),
       );
   }
 }
+
+
+
+class RoundIconButton extends StatelessWidget {
+  const RoundIconButton({super.key, this.icondata,this.iconcolor});
+  final IconData ? icondata;
+  final Color ? iconcolor;
+
+  @override
+  Widget build(BuildContext context) {
+    return  RawMaterialButton(
+      onPressed: null,
+        elevation: 6.0,
+        constraints: const BoxConstraints.tightFor(
+        width: 56.0,
+        height: 56.0,
+    ),
+      shape: const CircleBorder(),
+      fillColor: const Color(0xFF4C4F5E),
+      child:Icon(icondata),
+    );
+
+
+  }
+}
+
 
 
 

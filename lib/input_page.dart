@@ -1,4 +1,5 @@
 //This file decides the layout of our application
+import 'package:bmi_calculator_app/results_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'icon_content.dart';
@@ -229,12 +230,18 @@ class InputPageState extends State<InputPage> {
                 ),
               ]
           ),
-        Container(
-          child: const Center(child: Text('CALCULATE')),
-         color: kbottomBarcolor,
-         margin: const EdgeInsets.only(top: 10.0),
-          width: double.infinity,
-          height: kbottomBarheight,
+        GestureDetector(
+          onTap: (){
+           Navigator.push(context, MaterialPageRoute(builder: (context) => ResultsPage()));
+          },
+          child: Container(
+            color: kbottomBarcolor,
+           margin: const EdgeInsets.only(top: 10.0),
+            width: double.infinity,
+            height: kbottomBarheight,
+            child: const Center(child: Text('CALCULATE', style: TextStyle(fontSize: 25.0),),
+            ),
+          ),
         ),
         ],
         ),

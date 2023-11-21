@@ -230,8 +230,9 @@ class InputPageState extends State<InputPage> {
               ]
           ),
         Container(
+          child: const Center(child: Text('CALCULATE')),
          color: kbottomBarcolor,
-         margin: const EdgeInsets.only(top: 15.0),
+         margin: const EdgeInsets.only(top: 10.0),
           width: double.infinity,
           height: kbottomBarheight,
         ),

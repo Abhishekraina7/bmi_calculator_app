@@ -4,7 +4,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'icon_content.dart';
 import 'Reusable_card.dart';
 import 'constants.dart';
-
 //happy diwali
 
 enum Genders{male,female} // emums for male and female selection representation
@@ -20,6 +19,7 @@ class InputPageState extends State<InputPage> {
   Genders ? selectedGender;//It is a null aware operator, it helps the expression to be evaluated as null without causing any error
   int height = 180;
   int weight = 65;
+  int age = 20;
 
    
 
@@ -154,25 +154,33 @@ class InputPageState extends State<InputPage> {
                     cardChild: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        const Text('WEIGHT',style: TextStyle(fontWeight: FontWeight.bold, color: Colors.grey,fontSize: 18.0)
+                        const Text('WEIGHT',style: TextStyle(color: Colors.grey,fontSize: 18.0)
                           ),
                         const SizedBox(
                           height: 10.0,
                         ),
                         Text(weight.toString(),
                             style: knumberstyle),
-                        const Row(
+                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
-                          RoundIconButton(icondata: FontAwesomeIcons.plus,iconcolor: Colors.white, ),
-                             SizedBox(
+                          RoundIconButton(
+                              icondata: FontAwesomeIcons.minus,
+                              buttonPress: (){
+                                setState(() {
+                                  weight--;
+                                });
+                              },
+                          ),
+                             const SizedBox(
                               width: 10.0,
                             ),
-                             FloatingActionButton(
-                              backgroundColor: Color(0xFF4C4F5E),
-                                onPressed: null,
-                               child: Icon(Icons.add),
-                             ),
+                            RoundIconButton(icondata: FontAwesomeIcons.plus,
+                            buttonPress: (){
+                              setState(() {
+                                weight++;
+                              });
+                            },),
                           ],
                         ),
                       ],
@@ -181,8 +189,43 @@ class InputPageState extends State<InputPage> {
                   ),
 
                 ),
-                const Expanded(
-                  child: Resuablecard(colour: kactiveCardcolour),
+                Expanded(
+                  child: Resuablecard(colour: kactiveCardcolour,
+                      cardChild: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          const Text("Age", style: TextStyle(color: Colors.grey,fontSize: 18.0)
+                          ),
+                          const SizedBox(
+                            height: 10.0,
+                          ),
+                          Text(age.toString(),
+                            style: knumberstyle,),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              RoundIconButton(icondata: FontAwesomeIcons.minus,
+                                  buttonPress: (){
+                                setState(() {
+                                  age--;
+                                });}
+                              ),
+                              const SizedBox(
+                                width: 10.0,
+                              ),
+                              RoundIconButton(icondata: FontAwesomeIcons.plus,
+                                  buttonPress: (){
+                                    setState(() {
+                                      age++;
+                                    });}
+                              ),
+                            ],
+                          ),
+
+                        ],
+                      ),
+                  ),
+                  
                 ),
               ]
           ),
@@ -201,14 +244,14 @@ class InputPageState extends State<InputPage> {
 
 
 class RoundIconButton extends StatelessWidget {
-  const RoundIconButton({super.key, this.icondata,this.iconcolor});
+  const RoundIconButton({super.key, @required this.icondata,@required this.buttonPress});
   final IconData ? icondata;
-  final Color ? iconcolor;
+  final Function ? buttonPress;
 
   @override
   Widget build(BuildContext context) {
     return  RawMaterialButton(
-      onPressed: null,
+
         elevation: 6.0,
         constraints: const BoxConstraints.tightFor(
         width: 56.0,
@@ -216,6 +259,7 @@ class RoundIconButton extends StatelessWidget {
     ),
       shape: const CircleBorder(),
       fillColor: const Color(0xFF4C4F5E),
+      onPressed: buttonPress as void Function()?,
       child:Icon(icondata),
     );
 

@@ -7,12 +7,10 @@ class BMICalculator extends StatelessWidget {
   const BMICalculator({super.key});
 
 
-  // static const primaryColor = Color(0xFF0A0D22);
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-          // primaryColor: primaryColor,
         // Why this not changing the color of the app bar
         appBarTheme: const AppBarTheme(color:Color(0xFF0A0D22)),  // Solved the Appbar color not changing problem
         scaffoldBackgroundColor: const Color(0xFF0A0D22),

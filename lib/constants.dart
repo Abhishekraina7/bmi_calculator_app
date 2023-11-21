@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+//As the name shows, this files have the constants used across the codebase.
 const Color kactiveCardcolour = Color(0xFF1D1E33);
 const Color kinactiveCardcolour = Color(0xFF111328);
 const Color kbottomBarcolor = Color(0xFFEB1555);

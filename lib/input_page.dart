@@ -5,7 +5,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'icon_content.dart';
 import 'Reusable_card.dart';
 import 'constants.dart';
-import 'bottom_button.dart';
 //happy diwali
 
 enum Genders{male,female} // emums for male and female selection representation
@@ -231,17 +230,26 @@ class InputPageState extends State<InputPage> {
                 ),
               ]
           ),
-        BottomButton(
-          // This is the route for new Window or Page in our apps
+        GestureDetector(
           onTap: (){
-          Navigator.push(context, MaterialPageRoute(builder: (context) => ResultsPage()));
-        },
-        buttonName: 'CALCULATE',),
+           Navigator.push(context, MaterialPageRoute(builder: (context) => ResultsPage()));
+          },
+          child: Container(
+            color: kbottomBarcolor,
+           margin: const EdgeInsets.only(top: 10.0),
+            width: double.infinity,
+            height: kbottomBarheight,
+            child: const Center(child: Text('CALCULATE', style: TextStyle(fontSize: 25.0),),
+            ),
+          ),
+        ),
         ],
         ),
       );
   }
 }
+
+
 
 class RoundIconButton extends StatelessWidget {
   const RoundIconButton({super.key, @required this.icondata,@required this.buttonPress});

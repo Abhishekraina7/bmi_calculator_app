@@ -13,7 +13,7 @@ I am going to make a Body Mass Index Calculator inspired by the beautiful design
 
 ![Finished App](https://github.com/londonappbrewery/Images/blob/master/bmi-calc-demo.gif)
 
-## What I have learned and implemented by creting this project:
+## What I have learned and implemented by creating this project:
 
 - How to use Flutter themes to create coherent branding.
 - How to create multi-page apps using Flutter Routes and Navigator.

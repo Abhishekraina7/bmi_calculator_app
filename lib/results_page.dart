@@ -1,9 +1,8 @@
 import 'package:bmi_calculator_app/constants.dart';
 import 'package:flutter/material.dart';
 import 'Reusable_card.dart';
-import 'input_page.dart';
 import 'bottom_button.dart';
-
+import 'brain_of_app.dart';
 class ResultsPage extends StatelessWidget {
   const ResultsPage({super.key});
 
@@ -45,7 +44,7 @@ class ResultsPage extends StatelessWidget {
           ),
           BottomButton(
               onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context) => InputPage()));
+                Navigator.pop(context);
               },
               buttonName: 'RE-CALCULATE'),
           ],

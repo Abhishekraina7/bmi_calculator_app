@@ -2,7 +2,6 @@ import 'package:bmi_calculator_app/constants.dart';
 import 'package:flutter/material.dart';
 import 'Reusable_card.dart';
 import 'bottom_button.dart';
-import 'brain_of_app.dart';
 class ResultsPage extends StatelessWidget {
   const ResultsPage({super.key, required this.status, required this.result, required this.suggestion });
   final String status;
@@ -19,10 +18,8 @@ class ResultsPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
-          Expanded(
-              child: Container(
-                child: const Text(' Your Result',style: kResulttitlestyle,),
-              ),
+          const Expanded(
+              child: Text(' Your Result',style: kResulttitlestyle,),
           ),
           Expanded(
             flex: 5,

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'constants.dart';
 
 class BottomButton extends StatelessWidget {
-  BottomButton({required this.onTap,required this.buttonName});
+  const BottomButton({super.key, required this.onTap,required this.buttonName});
   final Function onTap;
   final String buttonName;
   @override

@@ -13,7 +13,7 @@ class Calculations{
   String calculatemBMI()
   {
    _bmi = weight! / pow(height ! /100, 2);
-    return _bmi.toStringAsFixed(1); //This function is able to convert the answer to a single decimal place
+    return _bmi.toStringAsFixed(1); //This function is able to convert the answer(double) to a single decimal place.
   }
 
  String getResult()

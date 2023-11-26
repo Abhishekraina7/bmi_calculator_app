@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'input_page.dart';
+import 'splash_Screen.dart';
+
 //This file for deciding the theme of our application
 void main() => runApp(const BMICalculator());
 
@@ -19,7 +20,7 @@ class BMICalculator extends StatelessWidget {
         textTheme:const TextTheme(bodyMedium: TextStyle(color: Colors.white)), // for white use (0xFFFFFFFF)
 
       ),
-      home: const InputPage(),
+      home: const Splashscreen(),
     );
   }
 }

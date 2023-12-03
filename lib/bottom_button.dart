@@ -13,7 +13,7 @@ class BottomButton extends StatelessWidget {
       child: Container(
         color: kbottomBarcolor,
         margin: const EdgeInsets.only(top: 10.0),
-        width: double.infinity,
+        width: kbottomBarwidth,
         height: kbottomBarheight,
         child:  Center(child: Text(buttonName, style: kBottomtextstyle),
         ),

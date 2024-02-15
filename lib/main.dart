@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'splash_Screen.dart';
 
-//This file for deciding the theme of our application
+//This file is for deciding the theme of our application
 void main() => runApp(const BMICalculator());
 
 class BMICalculator extends StatelessWidget {
   const BMICalculator({super.key});
-
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -21,6 +19,7 @@ class BMICalculator extends StatelessWidget {
 
       ),
       home: const Splashscreen(),
+      //The file inside the home section is the one which opens the first.
     );
   }
 }

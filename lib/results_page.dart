@@ -35,8 +35,10 @@ class ResultsPage extends StatelessWidget {
                   result.toUpperCase(),
                 style: kFinalstyle,
                 ),
-                Text(suggestion.toUpperCase(),
-                  style: kSuggestionmessagestyle,
+                Center(
+                  child: Text(suggestion,
+                    style: kSuggestionmessagestyle,
+                  ),
                 ),
               ],
             ),

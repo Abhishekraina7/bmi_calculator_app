@@ -7,18 +7,27 @@ import 'Reusable_card.dart';
 import 'constants.dart';
 import 'brain_of_app.dart';
 import 'bottom_button.dart';
+import 'package:path_provider/path_provider.dart';
+
 //happy diwali
 
-enum Genders{male,female} // emums for male and female selection representation
+enum Genders{male,female} // enums for male and female selection representation
 
 class InputPage extends StatefulWidget {
   const InputPage({super.key});
+
 
   @override
   InputPageState createState() => InputPageState();
 }
 
 class InputPageState extends State<InputPage> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+  }
   Genders ? selectedGender;//It is a null aware operator, it helps the expression to be evaluated as null without causing any error
   int height = 180;
   int weight = 65;

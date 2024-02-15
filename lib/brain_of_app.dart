@@ -1,5 +1,4 @@
 
-
 import 'dart:math';
 
 class Calculations{
@@ -46,5 +45,6 @@ class Calculations{
     }
 
   }
+
 
 }
